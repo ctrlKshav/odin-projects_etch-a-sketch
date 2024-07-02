@@ -1,5 +1,6 @@
 ﻿.container{
     border: 2px solid black;
+    box-sizing: border-box;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -12,11 +13,13 @@
     display: flex;
     gap: 2px;
     justify-content: center;
+    flex-grow: 1;
 }
 .column{
     border: 1px solid green;
-    height: 35px;
-    width: 35px;
+    flex-grow: 1;
+    /* height: 35px; */
+    /* width: 35px; */
 }
 
 .btn{

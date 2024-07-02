@@ -19,12 +19,18 @@ function createGrid(size){
             column.classList.add('column','column'+(j+1))
 
             column.addEventListener('mouseover',(e)=>{
-                e.target.style['background-color']='blue'
+                if(!(e.target.style.backgroundColor)){
+                rand1=Math.floor(Math.random() * (255 )) + 1;
+                rand2=Math.floor(Math.random() * (255 )) + 1;
+                rand3=Math.floor(Math.random() * (255 )) + 1;
+                ctr=j*10
+                e.target.style['background-color']=`rgb(${rand1},${rand2},${rand3},${100})`
+                }
             })
 
-            column.addEventListener('mouseout',(e)=>{
-                e.target.style['background-color']='white'
-            })
+            // column.addEventListener('mouseout',(e)=>{
+            //     e.target.style['background-color']='white'
+            // })
 
             row.appendChild(column)
         }
@@ -36,5 +42,6 @@ createGrid(16)
 
 btn.addEventListener('click',()=>{
     user=prompt("Enter Grid Size")
-    createGrid(user)
+    if(user<90) createGrid(user)
+    else alert('TOO HIGH')
 })
