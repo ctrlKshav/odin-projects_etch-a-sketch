@@ -9,7 +9,7 @@ document.body.appendChild(container)
 
 function createGrid(size){
     container.innerHTML=''
-
+    let k=0;
     for(let i=0;i<size;i++){
         row=document.createElement('div')
         row.classList.add('row','row'+(i+1))
@@ -24,8 +24,9 @@ function createGrid(size){
                 rand2=Math.floor(Math.random() * (255 )) + 1;
                 rand3=Math.floor(Math.random() * (255 )) + 1;
                 ctr=j*10
-                e.target.style['background-color']=`rgb(${rand1},${rand2},${rand3},${100})`
+                e.target.style['background-color']=`rgb(${rand1},${rand2},${rand3},${k}%)`
                 }
+                k+=10
             })
 
             // column.addEventListener('mouseout',(e)=>{
